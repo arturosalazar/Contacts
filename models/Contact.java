@@ -100,5 +100,15 @@ public class Contact {
 
     }
 
+    @Override
+    public String toString() {
+        String temp = "Name: " + this.name + "\n"
+            + "Phone number: " + this.phoneNumber  + "\n"
+            + "Birth Date: " + this.birthDate  + "\n"
+            + "Age: " + this.age  + " year old\n";
+
+        return temp;
+    }
+
 
 }

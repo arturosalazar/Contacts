@@ -6,13 +6,26 @@ public class Main {
         //Testing code to ensure that creating a contact works
         try {
             Contact contact1 = new Contact("Alan Turing", "6139874561", "07/23/1912");
-            
-            //Testing code to ensure that setting the birthdate works (check with debugger)
-            contact1.setBirthDate("07/23/2000");
+
+            //Testing toString
+            System.out.println(contact1);
 
             //Testing code to create a new contact from the old one, and update the old one without affecting the new one
             Contact contact2 = new Contact(contact1);
+            System.out.println(contact2);
+
+            System.out.println("\n\nChanging birthdates for each\n\n");
+
+            //Testing code to ensure that setting the birthdate works (check with debugger)
+            contact1.setBirthDate("07/23/2000");
             contact2.setBirthDate("12/31/1989");
+
+            System.out.println(contact1);
+            System.out.println(contact2);
+
+            //Uncomment to test an unparseable date
+            //Contact exceptionContact = new Contact("Alan Turing", "6139874561", "23/07/1912");
+
 
         System.out.println("Process Complete");
         } catch (Exception e) {
