@@ -9,11 +9,17 @@ public class Main {
             
             //Testing code to ensure that setting the birthdate works (check with debugger)
             contact1.setBirthDate("07/23/2000");
+
+            //Testing code to create a new contact from the old one, and update the old one without affecting the new one
+            Contact contact2 = new Contact(contact1);
+            contact2.setBirthDate("12/31/1989");
+
+        System.out.println("Process Complete");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("Process Complete");
+        
         
     }
 

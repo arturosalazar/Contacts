@@ -12,7 +12,17 @@ public class Contact {
     private String birthDate;
     private int age;
 
-    //Constructor will only get name, phone number, and birth date
+    /**
+     * Name: Contact - Constructor
+     * @param name
+     * @param phoneNumber
+     * @param birthDate
+     * @throws ParseException
+     * 
+     * Inside Function:
+     *  1. Updates the name, phone number and birthDate of the function
+     *  2. Updates the age of the contact based off of the birthDate by calling calculateAge
+     */
     public Contact (String name, String phoneNumber, String birthDate) throws ParseException {
         //update the name, phone, and birthDate
         this.name = name;
@@ -22,6 +32,21 @@ public class Contact {
         //Calculate age and set it 
         this.age = calculateAge(birthDate);
     }
+
+    /**
+     * Name: Contact - Copy Constructor
+     * @param source
+     * Inside Function:
+     *  1. Creates a new Contact object by copying the source Contact object's fields
+     */
+    public Contact (Contact source){
+        this.name = source.name;
+        this.phoneNumber = source.phoneNumber;
+        this.birthDate = source.birthDate;
+        this.age = source.age;
+
+    }
+
 
     /**
      * Name: calculateAge
