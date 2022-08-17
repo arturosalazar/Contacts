@@ -23,6 +23,17 @@ public class Contact {
         this.age = calculateAge(birthDate);
     }
 
+    /**
+     * Name: calculateAge
+     * @param birthDate
+     * @return age (int)
+     * @throws ParseException
+     * 
+     * Inside the function:
+     *  1. Parses a date from the birthDate String
+     *  2. Gets the current date
+     *  3. Subtracts the difference and returns the age
+     */
     private int calculateAge (String birthDate) throws ParseException {
 
         //Create an object of the SimpleDateFormat class
@@ -51,5 +62,18 @@ public class Contact {
         return yearsDiffernce;
 
     }
+
+    private void setAge(String birthDate) throws ParseException{
+        this.age = calculateAge(birthDate);
+    }
+
+
+    //Will update the birthdate field and simultaneously update the age of the object
+    public void setBirthDate (String birthDate) throws ParseException {
+        this.birthDate = birthDate;
+        setAge(birthDate);
+
+    }
+
 
 }

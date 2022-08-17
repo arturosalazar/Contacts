@@ -6,6 +6,9 @@ public class Main {
         //Testing code to ensure that creating a contact works
         try {
             Contact contact1 = new Contact("Alan Turing", "6139874561", "07/23/1912");
+            
+            //Testing code to ensure that setting the birthdate works (check with debugger)
+            contact1.setBirthDate("07/23/2000");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
