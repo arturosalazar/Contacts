@@ -1,7 +1,16 @@
+import models.Contact;
+
 public class Main {
-    public static void main(String[] args) {
-        
-      
+    public static void main(String[] args){
+
+        //Testing code to ensure that creating a contact works
+        try {
+            Contact contact1 = new Contact("Alan Turing", "6139874561", "07/23/1912");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Process Complete");
         
     }
 
