@@ -1,64 +1,25 @@
 import models.Contact;
+import models.ContactManager;
 
 public class Main {
     public static void main(String[] args){
 
-        //Testing code to ensure that creating a contact works
+        //Test that contact manager works
+        ContactManager contactManager = new ContactManager();
         try {
-            Contact contact1 = new Contact("Alan Turing", "6139874561", "07/23/1912");
-
-            //Testing toString
-            System.out.println(contact1);
-
-            //Testing getters
-            System.out.println("Testing Getters");
-            System.out.println("Get Name: " + contact1.getName());
-            System.out.println("Get Phone Number: " + contact1.getPhoneNumber());
-            System.out.println("Get Birth Date: " + contact1.getBirthDate());
-            System.out.println("Get Age: " + contact1.getAge());
-            System.out.println("\n\n");
-
-            //Testing code to create a new contact from the old one, and update the old one without affecting the new one
-            Contact contact2 = new Contact(contact1);
-            System.out.println(contact2);
-
-            System.out.println("\n\nChanging birthdates for each\n\n");
-
-            //Testing code to ensure that setting the birthdate works (check with debugger)
-            contact1.setBirthDate("07/23/2000");
-            contact2.setBirthDate("12/31/1989");
-
-            System.out.println(contact1);
-            System.out.println(contact2);
-
-            //Uncomment to test an unparseable date
-            //Contact exceptionContact = new Contact("Alan Turing", "6139874561", "23/07/1912");
-
-            //Uncomment to test illegal arguments to contact constructor
-            //Contact contactErr1 = new Contact(null, "6139874561", "07/23/1912");
-            //Contact contactErr2 = new Contact("", "6139874561", "07/23/1912");
-            //Contact contactErr3 = new Contact("Alan Turing", null, "07/23/1912");
-            //Contact contactErr4 = new Contact("Alan Turing", "", "07/23/1912");
-            //Contact contactErr5 = new Contact("Alan Turing", "123", "07/23/1912");
-
-            contact1.setName("Charles Darwin");
-            System.out.println(contact1);
-
-            contact1.setPhoneNumber("8885551111");
-            System.out.println(contact1);
-
-            //Uncomment to test illegal arguments to setName
-            //contact1.setName(null);
-            //contact1.setName("");
-
-
-            //Uncomment to test illegal arguments to setPhoneNumber
-            //contact1.setPhoneNumber(null);
-            //contact1.setPhoneNumber("");
-        
+            contactManager.addContact(new Contact("Ryan", "6135012424", "11/11/1992"));    
+            contactManager.addContact(new Contact("Gio", "6477092344", "11/11/1993"));    
+            contactManager.addContact(new Contact("Thomas", "8192256979", "11/11/1994"));    
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println(contactManager);
+        
+        //Test that removeContact method of contact manager works
+        System.out.println("Removing Gio\n");
+        contactManager.removeContact("Gio");
+        System.out.println(contactManager);
 
         System.out.println("Process Complete");
         
