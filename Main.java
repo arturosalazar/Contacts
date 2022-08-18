@@ -26,12 +26,27 @@ public class Main {
             //Uncomment to test an unparseable date
             //Contact exceptionContact = new Contact("Alan Turing", "6139874561", "23/07/1912");
 
-            //Uncomment to test illegal arguments to contact
+            //Uncomment to test illegal arguments to contact constructor
             //Contact contactErr1 = new Contact(null, "6139874561", "07/23/1912");
             //Contact contactErr2 = new Contact("", "6139874561", "07/23/1912");
             //Contact contactErr3 = new Contact("Alan Turing", null, "07/23/1912");
             //Contact contactErr4 = new Contact("Alan Turing", "", "07/23/1912");
             //Contact contactErr5 = new Contact("Alan Turing", "123", "07/23/1912");
+
+            contact1.setName("Charles Darwin");
+            System.out.println(contact1);
+
+            contact1.setPhoneNumber("8885551111");
+            System.out.println(contact1);
+
+            //Uncomment to test illegal arguments to setName
+            //contact1.setName(null);
+            //contact1.setName("");
+
+
+            //Uncomment to test illegal arguments to setPhoneNumber
+            //contact1.setPhoneNumber(null);
+            //contact1.setPhoneNumber("");
         
         } catch (Exception e) {
             System.out.println(e.getMessage());

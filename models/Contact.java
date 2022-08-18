@@ -101,6 +101,20 @@ public class Contact {
 
     }
 
+    public void setName(String name) {
+        if (name == null || name.isBlank()){
+            throw new IllegalArgumentException("Name cannot be null or blank");
+        }
+        this.name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        if (phoneNumber == null || phoneNumber.isBlank()){
+            throw new IllegalArgumentException("Phone number cannot be null or blank");
+        }
+        this.phoneNumber = phoneNumber;
+    }
+
     private void setAge(String birthDate) throws ParseException{
         this.age = calculateAge(birthDate);
     }
