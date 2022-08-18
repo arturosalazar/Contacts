@@ -24,6 +24,20 @@ public class Contact {
      *  2. Updates the age of the contact based off of the birthDate by calling calculateAge
      */
     public Contact (String name, String phoneNumber, String birthDate) throws ParseException {
+
+        //Check for illegal arguments - if provided, throw an IllegalArgumentException
+        if (name == null || name.isBlank()){
+            throw new IllegalArgumentException("Name cannot be null or blank");
+        }
+
+        if (phoneNumber == null || phoneNumber.isBlank()){
+            throw new IllegalArgumentException("Phone number cannot be null or blank");
+        }
+
+        if (phoneNumber.length() < 5) {
+            throw new IllegalArgumentException("Phone number must be greater than 5 characters");
+        }
+
         //update the name, phone, and birthDate
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -65,8 +79,7 @@ public class Contact {
         SimpleDateFormat yearFormat = new SimpleDateFormat("MM/dd/yyyy");
         //Set SimpleDateFormat object to lenient to throw an exception if there's an issue
         yearFormat.setLenient(false);
- 
- 
+
         //Get the current time as a Date object
         Date currentDate = new Date();
           

@@ -26,12 +26,18 @@ public class Main {
             //Uncomment to test an unparseable date
             //Contact exceptionContact = new Contact("Alan Turing", "6139874561", "23/07/1912");
 
-
-        System.out.println("Process Complete");
+            //Uncomment to test illegal arguments to contact
+            //Contact contactErr1 = new Contact(null, "6139874561", "07/23/1912");
+            //Contact contactErr2 = new Contact("", "6139874561", "07/23/1912");
+            //Contact contactErr3 = new Contact("Alan Turing", null, "07/23/1912");
+            //Contact contactErr4 = new Contact("Alan Turing", "", "07/23/1912");
+            //Contact contactErr5 = new Contact("Alan Turing", "123", "07/23/1912");
+        
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+        System.out.println("Process Complete");
         
         
     }
