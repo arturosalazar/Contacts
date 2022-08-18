@@ -54,11 +54,16 @@ public class ContactManager {
      * @param contactName
      * 
      * Inside the function:
-     *  1. Search for the contact that has the same name as the String contactName
-     *  2. If found, remove that contact
-     *  3. If not found, do not remove any contact
+     *  1. Check if ArrayList contacts is empty - if so, throw exception
+     *  2. Search for the contact that has the same name as the String contactName
+     *  3. If found, remove that contact
+     *  4. If not found, do not remove any contact
      */
     public void removeContact(String contactName){
+        //Throw exception is the ArrayList is empty
+        if (contacts.size() == 0){
+            throw new IllegalStateException("You cannot remove a contact from an empty ArrayList");
+        }
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).getName().equals(contactName)){
                 contacts.remove(i);

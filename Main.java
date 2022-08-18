@@ -6,6 +6,10 @@ public class Main {
 
         //Test that contact manager works
         ContactManager contactManager = new ContactManager();
+        
+        //Uncomment the next line to test that an exception is thrown if attempting to remove an item from an empty ContactManager
+        //contactManager.removeContact("Ryan");
+
         try {
             contactManager.addContact(new Contact("Ryan", "6135012424", "11/11/1992"));    
             contactManager.addContact(new Contact("Gio", "6477092344", "11/11/1993"));    
