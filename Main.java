@@ -10,6 +10,14 @@ public class Main {
             //Testing toString
             System.out.println(contact1);
 
+            //Testing getters
+            System.out.println("Testing Getters");
+            System.out.println("Get Name: " + contact1.getName());
+            System.out.println("Get Phone Number: " + contact1.getPhoneNumber());
+            System.out.println("Get Birth Date: " + contact1.getBirthDate());
+            System.out.println("Get Age: " + contact1.getAge());
+            System.out.println("\n\n");
+
             //Testing code to create a new contact from the old one, and update the old one without affecting the new one
             Contact contact2 = new Contact(contact1);
             System.out.println(contact2);

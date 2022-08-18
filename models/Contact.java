@@ -127,6 +127,22 @@ public class Contact {
 
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+
+    public String getBirthDate(){
+        return this.birthDate;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+
     @Override
     public String toString() {
         String temp = "Name: " + this.name + "\n"
