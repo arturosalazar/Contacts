@@ -71,8 +71,15 @@ public class Main {
                     }
                     
                     break;
-                case 'b': break;
+                case 'b': 
+                    System.out.println("\nWho would you like to remove?");
+                    String nameToRemove = scan.nextLine();
+                    contactManager.removeContact(nameToRemove);
+                    System.out.println("\n\nUPDATED CONTACTS\n\n");
+                    System.out.println(contactManager);
+                    break;
                 case 'c': 
+                    scan.close();
                     System.exit(0);
                     break;
                 default: 
