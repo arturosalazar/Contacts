@@ -22,6 +22,9 @@ public class Main {
         System.out.println("CONTACTS LOADED\n\n");
         System.out.println(contactManager);
         System.out.println("Process Complete");
+
+        System.out.println("manageContacts");
+        manageContacts();
         
     }
 
@@ -36,6 +39,47 @@ public class Main {
      *   •        case c: break the loop.
      *   • 3. close Scanner.
      */
+    public static void manageContacts(){
+        Scanner scan = new Scanner(System.in);
+        while(true){
+            System.out.println("Would you like to \n\ta) add another contact" 
+                + "\n\tb) remove a contact"
+                + "\n\tc) exit" );
+
+            String answer = scan.next();
+            char answerChar = answer.charAt(0);
+            answerChar = Character.toLowerCase(answerChar);
+            switch (answerChar){
+                case 'a': 
+                    System.out.print("\tName: ");
+                    scan.nextLine();
+                    String name = scan.nextLine();
+                    System.out.print("\tPhone number: ");
+                    String phoneNumber = scan.next();
+                    System.out.print("\tBirth date: ");
+                    String birthDate = scan.next();
+
+                    try {
+                        contactManager.addContact(new Contact(name, phoneNumber, birthDate));
+                    } 
+                    catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    finally{
+                        System.out.println("\n\nUPDATED CONTACTS\n\n");
+                        System.out.println(contactManager);
+                    }
+                    
+                    break;
+                case 'b': break;
+                case 'c': 
+                    System.exit(0);
+                    break;
+                default: 
+                    System.out.println("Invalid choice. Please choose either 'a' 'b' or 'c'");
+            }
+        }
+    }
 
 
 
