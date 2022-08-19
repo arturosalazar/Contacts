@@ -1,32 +1,27 @@
 import models.Contact;
 import models.ContactManager;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+import java.util.Scanner;
+
 public class Main {
+
+    //Make the ContactManager object a class variable
+    public static ContactManager contactManager = new ContactManager();
+
     public static void main(String[] args){
-
-        //Test that contact manager works
-        ContactManager contactManager = new ContactManager();
-        
-        //Uncomment the next line to test that an exception is thrown if attempting to remove an item from an empty ContactManager
-        //contactManager.removeContact("Ryan");
-
-        try {
-            contactManager.addContact(new Contact("Ryan", "6135012424", "11/11/1992"));    
-            contactManager.addContact(new Contact("Gio", "6477092344", "11/11/1993"));    
-            contactManager.addContact(new Contact("Thomas", "8192256979", "11/11/1994"));    
-        } catch (Exception e) {
+        try{ 
+            loadContacts("contacts.txt");
+        }
+        catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         }
 
+        System.out.println("CONTACTS LOADED\n\n");
         System.out.println(contactManager);
-        
-        //Test that removeContact method of contact manager works
-        System.out.println("Removing Gio\n");
-        contactManager.removeContact("Gio");
-        System.out.println(contactManager);
-
         System.out.println("Process Complete");
-        
         
     }
 
@@ -54,5 +49,24 @@ public class Main {
      *   • 2. From the manager object, it adds all contacts to the contacts list.
      *        Hint: use scan.next to grab the next String separated by white space.
      */
+    public static void loadContacts (String fileName) throws FileNotFoundException{
+        //Load contacts from fileName
+
+        //FIRST - need to create a new file
+        File file = new File(fileName);
+        Scanner scan = new Scanner(file);
+        while(scan.hasNext()){
+            String name = scan.next();
+            String phoneNumber = scan.next();
+            String dateOfBirth = scan.next();
+            try{
+                contactManager.addContact(new Contact(name, phoneNumber, dateOfBirth));
+            }
+            catch (ParseException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        scan.close();
+    }
 
 }
