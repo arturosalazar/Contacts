@@ -43,29 +43,33 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         while(true){
             System.out.println("Would you like to \n\ta) add another contact\n\tb) remove a contact\n\tc) exit");
-            String answer = scan.next();
+            String answer = scan.nextLine();
             char answerChar = answer.charAt(0);
             answerChar = Character.toLowerCase(answerChar);
             if (answerChar == 'a'){
                 System.out.print("\tName: ");
-                scan.nextLine();
                 String name = scan.nextLine();
                 System.out.print("\tPhone number: ");
-                String phoneNumber = scan.next();
+                String phoneNumber = scan.nextLine();
                 System.out.print("\tBirth date: ");
-                String birthDate = scan.next();
+                String birthDate = scan.nextLine();
 
-                try {
-                    contactManager.addContact(new Contact(name, phoneNumber, birthDate));
-                } 
-                catch (ParseException e) {
-                    System.out.println(e.getMessage());
+                //Check if input is either blank or not long enough. Note: do not need to 
+                //check for null because scan
+                if (name.isBlank() || phoneNumber.isBlank() || phoneNumber.length() < 5){ 
+                    System.out.println("\nThe input you provided is not valid. Registration failed.\n");
+                } else{
+                    try {
+                        contactManager.addContact(new Contact(name, phoneNumber, birthDate));
+                    } 
+                    catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    finally{
+                        System.out.println("\n\nUPDATED CONTACTS\n\n");
+                        System.out.println(contactManager);
+                    }
                 }
-                finally{
-                    System.out.println("\n\nUPDATED CONTACTS\n\n");
-                    System.out.println(contactManager);
-                }
-
             } else if (answerChar == 'b'){
                 System.out.println("\nWho would you like to remove?");
                 String nameToRemove = scan.next();
