@@ -112,6 +112,9 @@ public class Contact {
         if (phoneNumber == null || phoneNumber.isBlank()){
             throw new IllegalArgumentException("Phone number cannot be null or blank");
         }
+        if (phoneNumber.length() < 5) {
+            throw new IllegalArgumentException("phone number can't be less than 5 characters");
+        }
         this.phoneNumber = phoneNumber;
     }
 
