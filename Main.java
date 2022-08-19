@@ -17,14 +17,14 @@ public class Main {
         }
         catch (FileNotFoundException e){
             System.out.println(e.getMessage());
+        } 
+        finally {
+            System.out.println("CONTACTS LOADED\n\n");
+            System.out.println(contactManager);
+            manageContacts();
         }
 
-        System.out.println("CONTACTS LOADED\n\n");
-        System.out.println(contactManager);
-        System.out.println("Process Complete");
-
-        System.out.println("manageContacts");
-        manageContacts();
+       
         
     }
 
