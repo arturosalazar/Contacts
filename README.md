@@ -7,4 +7,4 @@ This project is for me to practice using and manipulating dates, handling checke
 
 # Project source
 This challenge/program is from the Complete Java Development Bootcamp on Udemy https://www.udemy.com/course/the-complete-java-development-bootcamp/
-The course provided the skeleton for the program (class names and a maain signature) as well as a contacts.txt file to use with readings data. There were also some  commented prompts and hints for type of methods to create in the main class. The rest of the code is mine 
+The course provided the skeleton for the program (class names and a main signature) as well as a contacts.txt file to use with readings data. There were also some  commented prompts and hints for type of methods to create in the main class. The rest of the code is mine 
